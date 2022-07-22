@@ -3,8 +3,6 @@ from script_reworked import RunBallots, MakeRankings
 
 #TODO: Fix all comments
 
-#TODO: Put all this into a github repo
-
 #TODO: Archive all web pages to the github repo
 
 #TODO: add a testing unit with pytests

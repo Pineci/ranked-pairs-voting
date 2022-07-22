@@ -2,19 +2,25 @@ import pandas as pd
 import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
-from typing import List
+from typing import List, Dict
 from functools import cmp_to_key
 
 #TODO: Fix all comments
 
+# Loads ballots from a csv file. Assumes file is formated using output from a google sheets form.
 def LoadBallots(filename : str) -> pd.DataFrame:
     ballots = pd.read_csv(filename)
     return ballots.drop(columns=["Timestamp"])
 
+# Returns a new ballots dataframe and removes a specific candidate from consideration.
 def RemoveCandidate(ballots : pd.DataFrame, candidate : str) -> pd.DataFrame:
     return ballots.drop(columns=[candidate])
 
-def TallyBallots(ballots : pd.DataFrame):
+# Take in a dataframe and return a square maatrix with results from the ballots.
+# The entry in row i, column j indicates how many people preferred candidate i to
+# candidate j. In the event that two candidates are ranked the same, the voter is
+# split equally between them. The diagonal of the matrix holds no meaning. 
+def TallyBallots(ballots : pd.DataFrame) -> pd.DataFrame:
     # Set up tally matrix
     candidates = ballots.columns
     tally = pd.DataFrame(np.zeros((len(candidates), len(candidates))), columns=candidates, index=candidates)
@@ -30,6 +36,9 @@ def TallyBallots(ballots : pd.DataFrame):
     
     return tally
 
+# Returns a list of pairs of candidates where one candidate was more preferred
+# than the other. In the event that two candidates are tied when faced head to
+# head, the pair is not considered.
 def FindMajorities(tally: pd.DataFrame) -> List[tuple[str, str]]:
     candidates = tally.columns
     majorities = [] # Entries are in the form (c1, c2) where candidate c1 beat candidate c2
@@ -44,6 +53,7 @@ def FindMajorities(tally: pd.DataFrame) -> List[tuple[str, str]]:
     return majorities
 
 # Returns positive values iff majority1 > majority2, negative values iff majority1 < majority2, and 0 for equality
+# Ordering is determined first by largest size of winning majority, then by smallest size of opposing minority.
 def CompareMajorities(majority1 : tuple[str, str], majority2: tuple[str, str], tally: pd.DataFrame) -> int:
     c1, c2 = majority1
     d1, d2 = majority2
@@ -65,11 +75,11 @@ def CompareMajorities(majority1 : tuple[str, str], majority2: tuple[str, str], t
             # If the majorities win by the same amount and have the same opposition, then they're tied
             return 0
     
-
-def SortMajorities(majorities: List[tuple[str, str]], tally: pd.DataFrame):
+# Sort majorities in order of descending priority
+def SortMajorities(majorities: List[tuple[str, str]], tally: pd.DataFrame) -> List[tuple[str, str]]:
     return sorted(majorities, key=cmp_to_key(lambda m1, m2: CompareMajorities(m1, m2, tally)), reverse=True)
 
-def LockGraph(sorted_majorities, tally):
+def LockGraph(sorted_majorities: List[tuple[str, str]], tally: pd.DataFrame) -> Dict[str, str]:
     graph = {k: [] for k in tally.columns}
     for majority in sorted_majorities:
         c1, c2 = majority
@@ -78,8 +88,7 @@ def LockGraph(sorted_majorities, tally):
             graph[c1].pop(-1)
     return graph
 
-# Checks if the provided graph contains a cycle which contains the relevant
-# new edge.
+# Checks if the provided graph contains a cycle which contains the relevant new edge
 def CreatesCycle(graph, currentkey, origin,depth):
     if depth > len(graph.keys())+1:
         return False

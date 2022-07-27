@@ -9,8 +9,6 @@ from script_reworked import RunBallots, MakeRankings
 
 #TODO: just accept files as arguments to a command line script
 
-#TODO: Archive old code so that anyone who wants can read it to see the comments, an intersiting little history
-
 #TODO: Check create cycle code
 
 # Makes example ballots accoring to the Tennessee example in the Ranked
@@ -40,7 +38,7 @@ def MakeTennesseeBallots():
         data.append(knoxville)
     return pd.DataFrame(data, columns=['memphis','nashville','chattanooga','knoxville'])
 
-def MakeAmbigiousTestCase():
+def MakeNarrowWinnerTestCase():
     # 1 = A
     # 2 = B
     # 3 = C
@@ -74,11 +72,75 @@ def MakeTieTestCase():
         data.append(voter_three)
     return pd.DataFrame(data, columns=["A", "B", "C"])
 
-print(RunBallots(MakeTennesseeBallots()))
+def MakeMiddleTwoTieTestCase():
+    # 1 = A
+    # 2 = B
+    # 3 = C
+    # 4 = D
+
+    # Want to have A win, B, C tie, D last
+    
+    voter_one = [1, 2, 3, 4] # Order: A, B, C, D
+    voter_two = [1, 3, 2, 4] # Order: A, C, B, D
+    data = []
+    for i in range(50):
+        data.append(voter_one)
+    for i in range(50):
+        data.append(voter_two)
+    return pd.DataFrame(data, columns=["A", "B", "C", "D"])
+
+def MakeMiddleThreeTieTestCase():
+    # 1 = A
+    # 2 = B
+    # 3 = C
+    # 4 = D
+    # 5 = E
+
+    # Want to have A win, B, C, D tie, E last
+    
+    voter_one = [1, 2, 3, 4, 5] # Order: A, B, C, D, E
+    voter_two = [1, 4, 2, 3, 5] # Order: A, D, B, C, E
+    voter_three = [1, 3, 4, 2, 5] # Order: A, C, D, B, E
+    data = []
+    for i in range(33):
+        data.append(voter_one)
+    for i in range(33):
+        data.append(voter_two)
+    for i in range(33):
+        data.append(voter_three)
+    return pd.DataFrame(data, columns=["A", "B", "C", "D", "E"])
+
+def MakeMultipleTieTestCase():
+    # 1 = A
+    # 2 = B
+    # 3 = C
+    # 4 = D
+
+    # Want to have A, B tie, then C, D tie
+    
+    voter_one = [1, 2, 3, 4] # Order: A, B, C, D
+    voter_two = [2, 1, 3, 4] # Order: B, A, C, D
+    voter_three = [1, 2, 4, 3] # Order: A, B, D, C
+    voter_four = [2, 1, 4, 3] # Order: B, A, D, C
+    data = []
+    for i in range(25):
+        data.append(voter_one)
+    for i in range(25):
+        data.append(voter_two)
+    for i in range(25):
+        data.append(voter_three)
+    for i in range(25):
+        data.append(voter_four)
+    return pd.DataFrame(data, columns=["A", "B", "C", "D"])
+
 print(MakeRankings(MakeTennesseeBallots()))
 
-print(RunBallots(MakeAmbigiousTestCase(), debug=True))
-print(MakeRankings(MakeAmbigiousTestCase()))
+print(MakeRankings(MakeNarrowWinnerTestCase()))
 
-print(RunBallots(MakeTieTestCase(), debug=True))
 print(MakeRankings(MakeTieTestCase()))
+
+print(MakeRankings(MakeMiddleTwoTieTestCase()))
+
+print(MakeRankings(MakeMiddleThreeTieTestCase()))
+
+print(MakeRankings(MakeMultipleTieTestCase()))

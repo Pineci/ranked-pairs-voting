@@ -10,8 +10,6 @@ import pytest
 
 #TODO: Fill in README
 
-#TODO: Archive all web pages to the github repo
-
 #TODO: just accept files as arguments to a command line script
 
 # Makes example ballots accoring to the Tennessee example in the Ranked

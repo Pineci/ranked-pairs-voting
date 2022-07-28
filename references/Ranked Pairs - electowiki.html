@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Ranked Pairs - electowiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"e21183bcab3acaf526726325","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Ranked_Pairs","wgTitle":"Ranked Pairs","wgCurRevisionId":14438,"wgRevisionId":14438,"wgArticleId":364,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Single-winner voting methods","Smith-efficient Condorcet methods","Defeat-dropping Condorcet methods","Monotonic electoral systems","Ranked voting methods"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Ranked_Pairs","wgRelevantArticleId":364,"wgIsProbablyEditable":true,
+"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRestrictionDelete":[],"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false},"wgNoticeProject":"all","wgEditSubmitButtonLabelPublish":false,"wgCentralAuthMobileDomain":false};RLSTATE={"skins.vector.user.styles":"ready","ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","skins.vector.user":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","mediawiki.ui.button":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","mediawiki.ui.icon":"ready","ext.MobileDetect.nomobile":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.CookieWarning.styles":"ready","oojs-ui-core.styles":"ready","oojs-ui.styles.indicators":"ready","mediawiki.widgets.styles":"ready","oojs-ui-core.icons":
+"ready","ext.DarkMode.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.js","skins.vector.es6","ext.eventLogging","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.urlShortener.toolbar","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.CookieWarning","ext.DarkMode","ext.centralauth.centralautologin"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1i9g4",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.CookieWarning.styles%7Cext.DarkMode.styles%7Cext.MobileDetect.nomobile%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.ui.button%2Cicon%7Cmediawiki.widgets.styles%7Coojs-ui-core.icons%2Cstyles%7Coojs-ui.styles.indicators%7Cskins.vector.icons%2Cstyles&amp;only=styles&amp;skin=vector-2022"/>
+<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector-2022"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector-2022"/>
+<meta name="generator" content="MediaWiki 1.38.2"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="description" content="Ranked Pairs (RP) or Tideman (named after Nicolaus Tideman) is a voting system that selects a single winner using votes that express preferences.  RP can also be used to create a sorted list of winners.  RP passes the Smith criterion and Condorcet Criterion, and is by definition a Condorcet method.  RP has many variations such as the Maximize Affirmed Majorities (MAM) and Maximum Majority Voting (MMV) voting methods."/>
+<meta name="twitter:site" content=""/>
+<meta name="twitter:card" content="summary"/>
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/w/index.php?title=Ranked_Pairs&amp;action=edit"/>
+<link rel="apple-touch-icon" href="//static.miraheze.org/electowikiwiki/5/58/Electowiki.png"/>
+<link rel="shortcut icon" href="//static.miraheze.org/electowikiwiki/a/aa/Electowiki-favicon.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="electowiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://electowiki.org/w/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="electowiki Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="canonical" href="https://electowiki.org/wiki/Ranked_Pairs"/>
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="electowiki"/>
+
+	<meta property="og:title" content="Ranked Pairs"/>
+
+	<meta property="og:description" content="Ranked Pairs (RP) or Tideman (named after Nicolaus Tideman) is a voting system that selects a single winner using votes that express preferences.  RP can also be used to create a sorted list of winners.  RP passes the Smith criterion and Condorcet Criterion, and is by definition a Condorcet method.  RP has many variations such as the Maximize Affirmed Majorities (MAM) and Maximum Majority Voting (MMV) voting methods."/>
+
+	<meta property="og:url" content="https://electowiki.org/wiki/Ranked_Pairs"/>
+
+<link rel="dns-prefetch" href="https://meta.miraheze.org" />
+<meta property="og:title" content="Ranked Pairs"/>
+<meta property="og:site_name" content="electowiki"/>
+<meta property="og:url" content="https://electowiki.org/wiki/Ranked_Pairs"/>
+<meta property="og:description" content="Ranked Pairs (RP) or Tideman (named after Nicolaus Tideman) is a voting system that selects a single winner using votes that express preferences.  RP can also be used to create a sorted list of winners.  RP passes the Smith criterion and Condorcet Criterion, and is by definition a Condorcet method.  RP has many variations such as the Maximize Affirmed Majorities (MAM) and Maximum Majority Voting (MMV) voting methods."/>
+<meta property="og:image" content="https://static.miraheze.org/electowikiwiki/4/4e/Electowiki.svg"/>
+<meta property="article:modified_time" content="2021-11-14T10:14:21Z"/>
+<meta property="article:published_time" content="2021-11-14T10:14:21Z"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"article","name":"Ranked Pairs - electowiki","headline":"Ranked Pairs - electowiki","mainEntityOfPage":"Ranked Pairs","identifier":"https:\/\/electowiki.org\/wiki\/Ranked_Pairs","url":"https:\/\/electowiki.org\/wiki\/Ranked_Pairs","description":"Ranked Pairs (RP) or Tideman (named after Nicolaus Tideman) is a voting system that selects a single winner using votes that express preferences.  RP can also be used to create a sorted list of winners.  RP passes the Smith criterion and Condorcet Criterion, and is by definition a Condorcet method.  RP has many variations such as the Maximize Affirmed Majorities (MAM) and Maximum Majority Voting (MMV) voting methods.","dateModified":"2021-11-14T10:14:21Z","datePublished":"2021-11-14T10:14:21Z","image":{"@type":"ImageObject","url":"https:\/\/static.miraheze.org\/electowikiwiki\/4\/4e\/Electowiki.svg"},"author":{"@type":"Organization","name":"electowiki","url":"https:\/\/electowiki.org","logo":{"@type":"ImageObject","url":"https:\/\/static.miraheze.org\/electowikiwiki\/4\/4e\/Electowiki.svg","caption":"electowiki"}},"publisher":{"@type":"Organization","name":"electowiki","url":"https:\/\/electowiki.org","logo":{"@type":"ImageObject","url":"https:\/\/static.miraheze.org\/electowikiwiki\/4\/4e\/Electowiki.svg","caption":"electowiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/electowiki.org\/w\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<link rel="dns-prefetch" href="//login.miraheze.org"/>
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Ranked_Pairs rootpage-Ranked_Pairs skin-vector-2022 action-view"><div class="mw-page-container">
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner ">
+
+<input
+	type="checkbox"
+	id="mw-sidebar-checkbox"
+	class="mw-checkbox-hack-checkbox"
+	checked>
+
+<header class="mw-header">
+	<label
+		id="mw-sidebar-button"
+		class="mw-checkbox-hack-button mw-ui-icon mw-ui-button mw-ui-quiet mw-ui-icon-element"
+		for="mw-sidebar-checkbox"
+		role="button"
+		aria-controls="mw-panel"
+		data-event-name="ui.sidebar"
+		tabindex="0"
+		title="Main menu">
+		Toggle sidebar
+	</label>
+	
+<a href="/wiki/Main_Page" class="mw-logo">
+	<img class="mw-logo-icon" src="//static.miraheze.org/electowikiwiki/4/4e/Electowiki.svg" alt=""
+		aria-hidden="true" height="50" width="50">
+	<span class="mw-logo-container">
+		<img class="mw-logo-wordmark" alt="electowiki"
+			src="Also electowikiwiki" style="width: 7.25em; height: 1.125em;">
+	</span>
+</a>
+
+	
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-collapses  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<div>
+		<form action="/w/index.php" id="searchform"
+			class="vector-search-box-form">
+			<div id="simpleSearch"
+				class="vector-search-box-inner"
+				 data-search-loc="header-moved">
+				<input class="vector-search-box-input"
+					 type="search" name="search" placeholder="Search electowiki" aria-label="Search electowiki" autocapitalize="sentences" title="Search electowiki [f]" accesskey="f" id="searchInput"
+				/>
+				<input type="hidden" name="title" value="Special:Search"/>
+				<input id="mw-searchButton"
+					 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search" />
+				<input id="searchButton"
+					 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go" />
+			</div>
+		</form>
+	</div>
+	<a href="/wiki/Special:Search"
+	
+		
+		
+		
+		class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search search-toggle">
+		<span>Search</span>
+	</a>
+	
+</div>
+
+	<div class="vector-user-links">
+	
+<nav id="p-personal-more" class="mw-portlet mw-portlet-personal-more vector-menu vector-user-menu-more" aria-labelledby="p-personal-more-label" role="navigation" 
+	 >
+	<label id="p-personal-more-label" aria-label="" class="vector-menu-heading" aria-hidden="true">
+		<span class="vector-menu-heading-label">User links</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+	<li id="p-createaccount" class="user-links-collapsible-item">
+		<a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Ranked+Pairs" class="mw-ui-button mw-ui-quiet" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a>
+	</li>
+</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu vector-user-menu-logged-out vector-menu vector-menu-dropdown" aria-labelledby="p-personal-label" role="navigation"  title="More options"
+	 >
+	<input type="checkbox"
+		id="p-personal-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-personal"
+		class="vector-menu-checkbox" aria-labelledby="p-personal-label" />
+	<label id="p-personal-label" aria-label="" class="vector-menu-heading mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-ellipsis" aria-hidden="true">
+		<span class="vector-menu-heading-label">Personal tools</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		<div class="vector-user-menu-create-account"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Ranked+Pairs" class="user-links-collapsible-item vector-menu-content-item mw-ui-icon mw-ui-icon-before" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></div>
+<div class="vector-user-menu-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Ranked+Pairs" icon="logIn" class="vector-menu-content-item vector-menu-content-item-login mw-ui-icon mw-ui-icon-before mw-ui-icon-wikimedia-logIn" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></div>
+<div class="vector-user-menu-anon-editor">
+	<p>
+		Pages for logged out editors <a href="/wiki/Help:Introduction" aria-label="Learn more about editing"><span>learn more</span></a>
+	</p>
+</div>
+
+		<ul class="vector-menu-content-list"><li id="pt-anonuserpage" class="mw-list-item"><span>Not logged in</span></li><li id="pt-anontalk" class="mw-list-item"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n"><span>Talk</span></a></li><li id="pt-darkmode-toggle" class="darkmode-link mw-list-item"><a href="#"><span>Dark mode</span></a></li><li id="pt-anoncontribs" class="mw-list-item"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y"><span>Contributions</span></a></li><li id="pt-createaccount" class="mw-list-item"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Ranked+Pairs" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Ranked+Pairs" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li></ul>
+		
+	</div>
+</nav>
+
+</div>
+
+</header>
+
+<div class="mw-workspace-container">
+	<div id="mw-navigation">
+		<div id="mw-head">
+			<div class="mw-article-toolbar-container">
+				<div id="left-navigation">
+					
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<label id="p-namespaces-label" aria-label="" class="vector-menu-heading" aria-hidden="true">
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="/wiki/Ranked_Pairs" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="mw-list-item"><a href="/wiki/Talk:Ranked_Pairs" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</nav>
+
+					
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox" aria-labelledby="p-variants-label" />
+	<label id="p-variants-label" aria-label="Change language variant" class="vector-menu-heading" aria-hidden="true">
+		<span class="vector-menu-heading-label">English</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+				</div>
+				<div id="right-navigation">
+					
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<label id="p-views-label" aria-label="" class="vector-menu-heading" aria-hidden="true">
+		<span class="vector-menu-heading-label">Views</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="/wiki/Ranked_Pairs"><span>Read</span></a></li><li id="ca-ve-edit" class="mw-list-item"><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit" title="Edit this page [v]" accesskey="v"><span>Edit</span></a></li><li id="ca-edit" class="collapsible mw-list-item"><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit" title="Edit this page [e]" accesskey="e"><span>Edit source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/index.php?title=Ranked_Pairs&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+					
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation"  title="More options"
+	 >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox" aria-labelledby="p-cactions-label" />
+	<label id="p-cactions-label" aria-label="" class="vector-menu-heading" aria-hidden="true">
+		<span class="vector-menu-heading-label">More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+				</div>
+			</div>
+		</div>
+		
+
+<div id="mw-panel" class="mw-sidebar">
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu vector-menu-portal portal" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<label id="p-navigation-label" aria-label="" class="vector-menu-heading" aria-hidden="true">
+		<span class="vector-menu-heading-label">Navigation</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-mainpage" class="mw-list-item"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"><span>Main Page</span></a></li><li id="n-portal" class="mw-list-item"><a href="/wiki/Electowiki:Community_portal" title="About the project, what you can do, where to find things"><span>Community portal</span></a></li><li id="n-mailinglist" class="mw-list-item"><a href="/wiki/Election-methods_mailing_list"><span>Mailing list</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Special:RecentChanges" icon="recentChanges" title="A list of recent changes in the wiki [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/Special:Random" icon="die" title="Load a random page [x]" accesskey="x"><span>Random page</span></a></li><li id="n-MediaWiki-help" class="mw-list-item"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents"><span>MediaWiki help</span></a></li><li id="n-Electowiki-help" class="mw-list-item"><a href="/wiki/Help:Contents"><span>Electowiki help</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+	
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<label id="p-tb-label" aria-label="" class="vector-menu-heading" aria-hidden="true">
+		<span class="vector-menu-heading-label">Tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Special:WhatLinksHere/Ranked_Pairs" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Special:RecentChangesLinked/Ranked_Pairs" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/index.php?title=Ranked_Pairs&amp;oldid=14438" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/index.php?title=Ranked_Pairs&amp;action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-urlshortener" class="mw-list-item"><a href="/w/index.php?title=Special:UrlShortener&amp;url=https%3A%2F%2Felectowiki.org%2Fwiki%2FRanked_Pairs"><span>Get shortened URL</span></a></li><li id="t-cite" class="mw-list-item"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Ranked_Pairs&amp;id=14438&amp;wpFormIdentifier=titleform" title="Information on how to cite this page"><span>Cite this page</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+	</div>
+	<div class="mw-table-of-contents-container mw-sticky-header-element">
+		
+	</div>
+	<div class="mw-content-container">
+<main id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"><!-- CentralNotice --></div>
+
+
+	<header class="mw-body-header">
+			
+		<h1 id="firstHeading" class="firstHeading mw-first-heading">Ranked Pairs</h1>
+		<div class="mw-indicators">
+		</div>
+			<div id="siteSub" class="noprint">From electowiki</div>
+	</header>
+
+	<div id="bodyContent" class="vector-body">
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><div class="sister-wikipedia sister-project noprint floatright" style="border: 1px solid #aaa; font-size: 90%; background: #f9f9f9; width: 250px; padding: 4px; text-align: left;">
+<div style="float: left;"><div class="floatnone"><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/44px-Wikipedia-logo.png" decoding="async" width="44" height="44" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/66px-Wikipedia-logo.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/88px-Wikipedia-logo.png 2x" /></div></div>
+<div style="margin-left: 60px;">Wikipedia has an article on:
+<div style="margin-left: 10px;"><b><a href="https://en.wikipedia.org/wiki/Ranked_Pairs" class="extiw" title="w:Ranked Pairs">Ranked Pairs</a></b>
+</div>
+</div></div>
+<p><b>Ranked Pairs</b> (RP) or <b>Tideman</b> (named after <a href="/wiki/Nicolaus_Tideman" title="Nicolaus Tideman">Nicolaus Tideman</a>) is a <a href="/wiki/Voting_system" class="mw-redirect" title="Voting system">voting system</a> that selects a single winner using votes that express preferences.  RP can also be used to create a sorted list of winners.  RP passes the <a href="/wiki/Smith_criterion" title="Smith criterion">Smith criterion</a> and <a href="/wiki/Condorcet_Criterion" class="mw-redirect" title="Condorcet Criterion">Condorcet Criterion</a>, and is by definition a <b><a href="/wiki/Condorcet_method" title="Condorcet method">Condorcet method</a></b>.  RP has many variations such as the <a href="/wiki/Maximize_Affirmed_Majorities" title="Maximize Affirmed Majorities">Maximize Affirmed Majorities</a> (MAM) and <a href="/wiki/Maximum_Majority_Voting" title="Maximum Majority Voting">Maximum Majority Voting</a> (MMV) voting methods.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Procedure"><span class="tocnumber">1</span> <span class="toctext">Procedure</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Tally"><span class="tocnumber">1.1</span> <span class="toctext">Tally</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Sort"><span class="tocnumber">1.2</span> <span class="toctext">Sort</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Lock"><span class="tocnumber">1.3</span> <span class="toctext">Lock</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#An_Example"><span class="tocnumber">2</span> <span class="toctext">An Example</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#The_Situation"><span class="tocnumber">2.1</span> <span class="toctext">The Situation</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Tally_2"><span class="tocnumber">2.2</span> <span class="toctext">Tally</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Sort_2"><span class="tocnumber">2.3</span> <span class="toctext">Sort</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Lock_2"><span class="tocnumber">2.4</span> <span class="toctext">Lock</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Ambiguity_Resolution_Example"><span class="tocnumber">2.5</span> <span class="toctext">Ambiguity Resolution Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#External_Resources"><span class="tocnumber">4</span> <span class="toctext">External Resources</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Procedure">Procedure</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=1" class="mw-editsection-visualeditor" title="Edit section: Procedure">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=1" title="Edit section: Procedure">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The RP procedure is as follows:
+</p>
+<ol><li>Tally the vote count comparing each pair of candidates, and determine the winner of each pair (provided there is not a tie)</li>
+<li>Sort (rank) each pair, by the largest margin of victory first to smallest last.</li>
+<li>"Lock in" each pair, starting with the one with the largest number of winning votes, and add one in turn to a graph as long as they do not create a cycle (which would create an ambiguity).  The completed graph shows the winner.</li></ol>
+<p>See the <a href="/wiki/Ranked_pairs#Notes" class="mw-redirect" title="Ranked pairs">Notes</a> section for information on finding the Ranked Pairs winner without constructing a graph.
+</p><p>RP can also be used to create a sorted list of preferred candidates.
+To create a sorted list, repeatedly use RP to select a winner,
+remove that winner from the list of candidates,
+and repeat (to find the next runner up, and so forth). A simpler way to create the sorted list is simply to run RP once, and then use the resulting <a href="/wiki/Condorcet_ranking" title="Condorcet ranking">Condorcet ranking</a> (when ignoring the defeats that were ignored by the RP procedure) as the RP ranking.
+</p>
+<h3><span class="mw-headline" id="Tally">Tally</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=2" class="mw-editsection-visualeditor" title="Edit section: Tally">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=2" title="Edit section: Tally">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>To tally the votes, consider each voters' preferences.
+For example, if a voter states "A &gt; B &gt; C"
+(A is better than B, and B is better than C), the tally
+should add one for A in A vs. B, one for A in A vs. C, and
+one for B in B vs. C.
+Voters may also express indifference (e.g., A = B), and unstated
+candidates are assumed to be equally worse than the stated candidates.
+</p><p>Once tallied, the majorities can be determined.
+If "Vxy" is the number of Votes that rank x over y, then
+"x" wins if Vxy &gt; Vyx, and "y" wins if Vyx &gt; Vxy.
+</p>
+<h3><span class="mw-headline" id="Sort">Sort</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=3" class="mw-editsection-visualeditor" title="Edit section: Sort">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=3" title="Edit section: Sort">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The pairs of winners, called the "majorities", are then sorted from
+the largest majority to the smallest majority.
+A majority for x over y precedes a majority for z over w 
+if and only if at least one of the following conditions holds:
+</p>
+<ol><li>Vxy &gt; Vzw.  In other words, the majority having more support for its alternative is ranked first.</li>
+<li>Vxy = Vzw and Vwz &gt; Vyx.  Where the majorities are equal, the majority with the smaller minority opposition is ranked first.</li></ol>
+<h3><span class="mw-headline" id="Lock">Lock</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=4" class="mw-editsection-visualeditor" title="Edit section: Lock">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=4" title="Edit section: Lock">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The next step is to examine each pair in turn to determine
+which pairs to "lock in".
+Using the sorted list above, lock in each pair in turn <i>unless</i>
+the pair will create a circularity in a graph
+(e.g., where A is more than B, B is more than C, but C is more than A).
+</p>
+<h2><span class="mw-headline" id="An_Example">An Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=5" class="mw-editsection-visualeditor" title="Edit section: An Example">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=5" title="Edit section: An Example">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="The_Situation">The Situation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=6" class="mw-editsection-visualeditor" title="Edit section: The Situation">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=6" title="Edit section: The Situation">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Imagine an election for the capital of <a href="/wiki/Tennessee" title="Tennessee">Tennessee</a>, a state in the United States that is over 500 miles east-to-west, and only 110 miles north-to-south.  Let's say the candidates for the capital are Memphis (on the far west end), Nashville (in the center), Chattanooga (129 miles southeast of Nashville), and Knoxville (on the far east side, 114 northeast of Chattanooga).    Here's the population breakdown by metro area (surrounding county): 
+</p>
+<div style="float:right; padding:2px; text-align:center">
+<a href="/wiki/File:Condorcet_Tennessee.png" class="image"><img alt="CondorcetTennesee.png" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Condorcet_Tennessee.png" decoding="async" width="413" height="117" /></a></div>
+<ul><li>Memphis (Shelby County): 826,330</li>
+<li>Nashville (Davidson County): 510,784</li>
+<li>Chattanooga (Hamilton County): 285,536</li>
+<li>Knoxville (Knox County): 335,749</li></ul>
+<p>Let's say that in the vote, the voters vote based on geographic proximity.  Assuming that the population distribution of the rest of Tennessee follows from those population centers, one could easily envision an election where the percentages of votes would be as follows:
+</p>
+<table class="wikitable" border="1">
+<tbody><tr>
+<td>
+<p><b>42% of voters (close to Memphis)</b><br />
+1. Memphis<br />
+2. Nashville<br />
+3. Chattanooga<br />
+4. Knoxville
+</p>
+</td>
+<td valign="top">
+<p><b>26% of voters (close to Nashville)</b><br />
+1. Nashville<br />
+2. Chattanooga<br />
+3. Knoxville<br />
+4. Memphis
+</p>
+</td>
+<td>
+<p><b>15% of voters (close to Chattanooga)</b><br />
+1. Chattanooga<br />
+2. Knoxville<br />
+3. Nashville<br />
+4. Memphis
+</p>
+</td>
+<td>
+<p><b>17% of voters (close to Knoxville)</b><br />
+1. Knoxville<br />
+2. Chattanooga<br />
+3. Nashville<br />
+4. Memphis
+</p>
+</td>
+</tr>
+</tbody></table>
+<p>The results would be tabulated as follows:
+</p>
+<table border=""><caption>Pairwise Election Results</caption>
+<tbody><tr><th colspan="2"></th><th colspan="4" bgcolor="#c0c0ff">A</th></tr>
+<tr>
+<th colspan="2"></th><th bgcolor="#c0c0ff">Memphis
+</th><th bgcolor="#c0c0ff">Nashville
+</th><th bgcolor="#c0c0ff">Chattanooga
+</th><th bgcolor="#c0c0ff">Knoxville
+</th></tr>
+<tr><th bgcolor="#ffc0c0" rowspan="4">B</th><th bgcolor="#ffc0c0">Memphis</th><td></td><td nowrap="" bgcolor="#e0e0ff">[A] 58% <br />[B] 42% <br /></td><td nowrap="" bgcolor="#e0e0ff">[A] 58% <br />[B] 42% <br /></td><td nowrap="" bgcolor="#e0e0ff">[A] 58% <br />[B] 42% <br /></td></tr>
+<tr><th bgcolor="#ffc0c0">Nashville</th><td nowrap="" bgcolor="#ffe0e0">[A] 42% <br />[B] 58% <br /></td><td></td><td nowrap="" bgcolor="#ffe0e0">[A] 32% <br />[B] 68% <br /></td><td nowrap="" bgcolor="#ffe0e0">[A] 32% <br />[B] 68% <br /></td></tr>
+<tr><th bgcolor="#ffc0c0">Chattanooga</th><td nowrap="" bgcolor="#ffe0e0">[A] 42% <br />[B] 58% <br /></td><td nowrap="" bgcolor="#e0e0ff">[A] 68% <br />[B] 32% <br /></td><td></td><td nowrap="" bgcolor="#ffe0e0">[A] 17% <br />[B] 83% <br /></td></tr>
+<tr><th bgcolor="#ffc0c0">Knoxville</th><td nowrap="" bgcolor="#ffe0e0">[A] 42% <br />[B] 58% <br /></td><td nowrap="" bgcolor="#e0e0ff">[A] 68% <br />[B] 32% <br /></td><td nowrap="" bgcolor="#e0e0ff">[A] 83% <br />[B] 17% <br /></td><td></td></tr>
+<tr><th colspan="2" bgcolor="#c0c0ff">Pairwise election results (won-lost-tied):
+</th><td bgcolor="#ffffff">0-3-0
+</td><td bgcolor="#ffffff">3-0-0
+</td><td bgcolor="#ffffff">2-1-0
+</td><td bgcolor="#ffffff">1-2-0
+</td></tr><tr><th colspan="2" bgcolor="#c0c0ff">Votes against in worst pairwise defeat:
+</th><td bgcolor="#ffffff">58%</td><td bgcolor="#ffffff">N/A</td><td bgcolor="#ffffff">68%</td><td bgcolor="#ffffff">83%</td></tr></tbody></table>
+<ul><li>[A] indicates voters who preferred the candidate listed in the column caption to the candidate listed in the row caption</li>
+<li>[B] indicates voters who preferred the candidate listed in the row caption to the candidate listed in the column caption</li>
+<li>[NP] indicates voters who expressed no preference between either candidate</li></ul>
+<h3><span class="mw-headline" id="Tally_2">Tally</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=7" class="mw-editsection-visualeditor" title="Edit section: Tally">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=7" title="Edit section: Tally">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>First, list every pair, and determine the winner:
+</p>
+<table class="wikitable" border="1">
+<tbody><tr>
+<th>Pair</th>
+<th>Winner
+</th></tr>
+<tr>
+<td>Memphis (42%) vs. Nashville (58%)</td>
+<td>Nashville 58%
+</td></tr>
+<tr>
+<td>Memphis (42%) vs. Chattanooga (58%)</td>
+<td>Chattanooga 58%
+</td></tr>
+<tr>
+<td>Memphis (42%) vs. Knoxville (58%)</td>
+<td>Knoxville 58%
+</td></tr>
+<tr>
+<td>Nashville (68%) vs. Chattanooga (32%)</td>
+<td>Nashville 68%
+</td></tr>
+<tr>
+<td>Nashville (68%) vs. Knoxville (32%)</td>
+<td>Nashville 68%
+</td></tr>
+<tr>
+<td>Chattanooga (83%) vs. Knoxville (17%)</td>
+<td>Chattanooga: 83%
+</td></tr></tbody></table>
+<p>Note that absolute counts of votes can be used, or
+percentages of the total number of votes; it makes no difference.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Sort_2">Sort</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=8" class="mw-editsection-visualeditor" title="Edit section: Sort">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=8" title="Edit section: Sort">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The votes are then sorted.
+The largest majority is "Chattanooga over Knoxville"; 83% of the
+voters prefer Chattanooga.
+Nashville (68%) beats both Chattanooga and Knoxville by a score
+of 68% over 32% (an exact tie, which is unlikely in real life
+for this many voters).
+Since Chattanooga &gt; Knoxville, and they're the losers,
+Nashville vs. Knoxville will be added first, followed by
+Nashville vs. Chattanooga.
+</p><p>Thus, the pairs from above would be sorted this way:
+</p>
+<table class="wikitable" border="1">
+<tbody><tr>
+<th>Pair</th>
+<th>Winner
+</th></tr>
+<tr>
+<td>Chattanooga (83%) vs. Knoxville (17%)</td>
+<td>Chattanooga 83%
+</td></tr>
+<tr>
+<td>Nashville (68%) vs. Knoxville (32%)</td>
+<td>Nashville 68%
+</td></tr>
+<tr>
+<td>Nashville (68%) vs. Chattanooga (32%)</td>
+<td>Nashville 68%
+</td></tr>
+<tr>
+<td>Memphis (42%) vs. Nashville (58%)</td>
+<td>Nashville 58%
+</td></tr>
+<tr>
+<td>Memphis (42%) vs. Chattanooga (58%)</td>
+<td>Chattanooga 58%
+</td></tr>
+<tr>
+<td>Memphis (42%) vs. Knoxville (58%)</td>
+<td>Knoxville 58%
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Lock_2">Lock</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=9" class="mw-editsection-visualeditor" title="Edit section: Lock">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=9" title="Edit section: Lock">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The pairs are then locked in order, skipping any pairs
+that would create a cycle:
+</p>
+<ul><li>Lock Chattanooga over Knoxville.</li>
+<li>Lock Nashville over Knoxville.</li>
+<li>Lock Nashville over Chattanooga.</li>
+<li>Lock Nashville over Memphis.</li>
+<li>Lock Chattanooga over Memphis.</li>
+<li>Lock Knoxville over Memphis.</li></ul>
+<p>In this case, no cycles are created by any of the
+pairs, so every single one is locked in.
+</p><p>Every "lock in" would add another arrow to the
+graph showing the relationship between the candidates.
+Here is the final graph (where arrows point from
+the winner).
+</p><p><a href="/wiki/File:Tennessee-vote.svg" class="image"><img alt="Tennessee-vote.svg" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Tennessee-vote.svg" decoding="async" width="350" height="240" /></a>
+</p><p>In this example, Nashville is the winner using RP.
+</p>
+<h3><span class="mw-headline" id="Ambiguity_Resolution_Example">Ambiguity Resolution Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=10" class="mw-editsection-visualeditor" title="Edit section: Ambiguity Resolution Example">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=10" title="Edit section: Ambiguity Resolution Example">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Let's say there was an ambiguity.  For a simple situation involving candidates A, B, and C.
+</p>
+<ul><li>A &gt; B 68%</li>
+<li>B &gt; C 72%</li>
+<li>C &gt; A 52%</li></ul>
+<p>In this situation we "lock in" the majorities starting with the greatest one first.
+</p>
+<ul><li>Lock B &gt; C</li>
+<li>Lock A &gt; B</li>
+<li>We don't lock in the final C &gt; A as it creates an ambiguity or cycle.</li></ul>
+<p>Therefore, A is the winner.
+</p>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=11" class="mw-editsection-visualeditor" title="Edit section: Notes">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=11" title="Edit section: Notes">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+The RP winner can be found using only a pairwise comparison table. Example:  <blockquote>4 A&gt;B&gt;C  
+<p>3 B&gt;C&gt;A  
+</p>
+5 C&gt;A&gt;B  </blockquote>The pairwise comparison table looks like this (victories are bolded, defeats are underlined):  
+<table class="wikitable">
+<caption>
+</caption>
+<tbody><tr>
+<th>
+</th>
+<th>A
+</th>
+<th>B
+</th>
+<th>C
+</th></tr>
+<tr>
+<td>A
+</td>
+<td>-
+</td>
+<td><b>9</b>
+</td>
+<td><u>4</u>
+</td></tr>
+<tr>
+<td>B
+</td>
+<td><u>3</u>
+</td>
+<td>-
+</td>
+<td><b>7</b>
+</td></tr>
+<tr>
+<td>C
+</td>
+<td><b>8</b>
+</td>
+<td><u>5</u>
+</td>
+<td>-
+</td></tr></tbody></table>
+<p>All candidates suffer at least one pairwise defeat, so the RP procedure must be done. The pairwise victories can be ordered from largest to smallest as A &gt; B 9, C &gt; A 8, and B &gt; C 7. The first two victories are locked in (A&gt;B creates no cycle, since it's the first defeat added, and C&gt;A also creates no cycle, since for A, it shows C&gt;A&gt;B), and then the third defeat is thrown away (because adding B&gt;C would result in, for C, a C&gt;A&gt;B&gt;C <a href="/wiki/Beatpath" title="Beatpath">beatpath</a> cycle), resulting in the following pairwise comparison table:  
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>
+</th>
+<th>C
+</th>
+<th>A
+</th>
+<th>B
+</th></tr>
+<tr>
+<td>C
+</td>
+<td>-
+</td>
+<td><b>8</b>
+</td>
+<td><u><s><small>5</small></s></u>
+</td></tr>
+<tr>
+<td>A
+</td>
+<td><u>4</u>
+</td>
+<td>-
+</td>
+<td><b>9</b>
+</td></tr>
+<tr>
+<td>B
+</td>
+<td><b><s>7</s></b>
+</td>
+<td><u>3</u>
+</td>
+<td>-
+</td></tr></tbody></table>
+<p>When ignoring struckthrough (non-locked in) pairwise victories, C is the only candidate with no pairwise defeats, and thus is the RP winner. The RP ranking is C&gt;A&gt;B, since C pairwise beats all others, A pairwise beats everyone except C, and B pairwise loses to everyone (when ignoring the defeats ignored by the RP procedure).  
+</p><p>Ranked Pairs is <a href="/wiki/Smith-efficient" class="mw-redirect" title="Smith-efficient">Smith-efficient</a>, because no Smith set member can be beaten by a candidate not in the Smith set, and therefore any candidate not in the Smith set can't have their defeats to Smith set members discarded during the RP procedure, so they can't become the Condorcet winner.   
+</p><p>Ranked Pairs passes the <a href="/wiki/Independence_of_Smith-dominated_Alternatives" class="mw-redirect" title="Independence of Smith-dominated Alternatives">Independence of Smith-dominated Alternatives</a> criterion, because the only cycles for RP to potentially resolve will always be between Smith set members. Because of this, all candidates not in the Smith set can be eliminated before starting the procedure, reducing the number of operations needed to be done to find the winner. In addition, Ranked Pairs, like <a href="/wiki/Schulze" class="mw-redirect" title="Schulze">Schulze</a>, is equivalent to <a href="/wiki/Minimax" class="mw-redirect" title="Minimax">Minimax</a> when there are 3 or fewer candidates with no pairwise ties between them, so if the Smith set has 3 or fewer candidates in it with no pairwise ties between them, <a href="/wiki/Smith//Minimax" title="Smith//Minimax">Smith//Minimax</a> can be run instead to find/demonstrate the RP winner.  
+</p>
+<h2><span class="mw-headline" id="External_Resources">External Resources</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ranked_Pairs&amp;veaction=edit&amp;section=12" class="mw-editsection-visualeditor" title="Edit section: External Resources">edit</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Ranked_Pairs&amp;action=edit&amp;section=12" title="Edit section: External Resources">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a rel="nofollow" class="external text" href="http://condorcet.org/rp">Ranked Pairs</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.alumni.caltech.edu/~seppley">The Maximize Affirmed Majorities voting procedure (MAM)</a></li>
+<li><a rel="nofollow" class="external text" href="http://radicalcentrism.org/majority_voting.html">Maximum Majority Voting</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.cs.angelo.edu/~rlegrand/rbvote/desc.html">Descriptions of ranked-ballot voting methods</a></li>
+<li><a rel="nofollow" class="external text" href="http://fc.antioch.edu/~james_green-armytage/voting.htm">Voting methods resource page</a></li></ul>
+<table align="center" border="0" cellpadding="3" cellspacing="3" style="border: 1px solid #E0E0E0; background-color: #F8F8F8; color:black;">
+
+<tbody><tr>
+<td style="font-size: 90%">This page uses <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Licensed</a> content from <a href="https://en.wikipedia.org/wiki/Ranked_Pairs" class="extiw" title="wikipedia:Ranked Pairs">Wikipedia</a> (<a rel="nofollow" class="external text" href="https://en.wikipedia.org/w/index.php?title=Ranked+Pairs&amp;action=history">view authors)</a>.
+</td>
+<td>
+</td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Parsed by mw111
+Cached time: 20220724213040
+Cache expiry: 864000
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.055 seconds
+Real time usage: 0.140 seconds
+Preprocessor visited node count: 110/1000000
+Post‐expand include size: 927/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/99
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   26.570      1 -total
+ 51.64%   13.721      1 Template:Fromwikipedia
+ 47.34%   12.578      1 Template:Wikipedia
+-->
+
+<!-- Saved in parser cache with key electowikiwiki:pcache:idhash:364-0!canonical and timestamp 20220724213040 and revision id 14438. Serialized with JSON.
+ -->
+</div><noscript><img src="https://electowiki.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://electowiki.org/w/index.php?title=Ranked_Pairs&amp;oldid=14438">https://electowiki.org/w/index.php?title=Ranked_Pairs&amp;oldid=14438</a>"</div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/wiki/Category:Single-winner_voting_methods" title="Category:Single-winner voting methods">Single-winner voting methods</a></li><li><a href="/wiki/Category:Smith-efficient_Condorcet_methods" title="Category:Smith-efficient Condorcet methods">Smith-efficient Condorcet methods</a></li><li><a href="/wiki/Category:Defeat-dropping_Condorcet_methods" title="Category:Defeat-dropping Condorcet methods">Defeat-dropping Condorcet methods</a></li><li><a href="/wiki/Category:Monotonic_electoral_systems" title="Category:Monotonic electoral systems">Monotonic electoral systems</a></li><li><a href="/wiki/Category:Ranked_voting_methods" title="Category:Ranked voting methods">Ranked voting methods</a></li></ul></div></div>
+	</div>
+
+
+</main>
+<div id='mw-data-after-content'>
+	<div class="mw-cookiewarning-container"><div class="mw-cookiewarning-text"><span>Cookies help us deliver our services. By using our services, you agree to our use of cookies.</span></div><form method="POST"><div class='oo-ui-layout oo-ui-horizontalLayout'><span class='oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-progressive oo-ui-buttonWidget'><a role='button' tabindex='0' href='https://meta.miraheze.org/wiki/Special:MyLanguage/Privacy_Policy#4._Cookies' rel='nofollow' class='oo-ui-buttonElement-button'><span class='oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-progressive'></span><span class='oo-ui-labelElement-label'>More information</span><span class='oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-progressive'></span></a></span><span class='oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-primary oo-ui-flaggedElement-progressive oo-ui-buttonInputWidget'><button type='submit' tabindex='0' name='disablecookiewarning' value='OK' class='oo-ui-inputWidget-input oo-ui-buttonElement-button'><span class='oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-invert'></span><span class='oo-ui-labelElement-label'>OK</span><span class='oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-invert'></span></button></span></div></form></div>
+</div>
+
+	</div> 
+</div> 
+
+<div class="mw-workspace-container mw-footer-container">
+	<div class="mw-content-container">
+		
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 14 November 2021, at 10:14.</li>
+	<li id="footer-info-copyright">Text is available under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution/Share-Alike License</a>; additional terms may apply. See <a href="http://electowiki.org/wiki/Project:Terms_of_Use">Terms of Use</a> for details.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://meta.miraheze.org/wiki/Special:MyLanguage/Privacy_Policy" class="extiw" title="m:Special:MyLanguage/Privacy Policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/wiki/Electowiki:About" class="mw-redirect" title="Electowiki:About">About electowiki</a></li>
+	<li id="footer-places-disclaimer"><a href="/wiki/Electowiki:General_disclaimer" class="mw-redirect" title="Electowiki:General disclaimer">Disclaimers</a></li>
+	<li id="footer-places-termsofservice"><a href="https://meta.miraheze.org/wiki/Special:MyLanguage/Terms_of_Use" class="extiw" title="m:Special:MyLanguage/Terms of Use">Terms of Use</a></li>
+	<li id="footer-places-donate"><a href="https://meta.miraheze.org/wiki/Special:MyLanguage/Donate" class="extiw" title="m:Special:MyLanguage/Donate">Donate to Miraheze</a></li>
+	<li id="footer-places-mobileview"><a href="https://electowiki.org/w/index.php?title=Ranked_Pairs&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-poweredbyico"><a href="https://meta.miraheze.org/wiki/Special:MyLanguage/Miraheze" target=""><img src="https://static.miraheze.org/commonswiki/f/ff/Powered_by_Miraheze.svg" alt="Hosted by Miraheze" width="88" height="31" loading="lazy"/></a><a href="https://www.mediawiki.org/" target=""><img src="/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-sa/4.0/" target=""><img src="https://meta.miraheze.org/w/resources/assets/licenses/cc-by-sa.png" alt="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" width="88" height="31" loading="lazy"/></a></li>
+</ul>
+
+</footer>
+
+	</div>
+</div>
+	</div> 
+</div> 
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.055","walltime":"0.140","ppvisitednodes":{"value":110,"limit":1000000},"postexpandincludesize":{"value":927,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":4,"limit":100},"expensivefunctioncount":{"value":0,"limit":99},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%   26.570      1 -total"," 51.64%   13.721      1 Template:Fromwikipedia"," 47.34%   12.578      1 Template:Wikipedia"]},"cachereport":{"origin":"mw111","timestamp":"20220724213040","ttl":864000,"transientcontent":false}}});});</script>
+				<script>
+				var _paq = window._paq = window._paq || [];
+				if ( 1 ) {
+					_paq.push(['disableCookies']);
+				}
+				if ( 0 ) {
+					_paq.push(['setRequestMethod', 'GET']);
+				}
+				_paq.push(['trackPageView']);
+				_paq.push(['enableLinkTracking']);
+				(function() {
+					var u = "https://matomo.miraheze.org/";
+					_paq.push(['setTrackerUrl', u+'matomo.php']);
+					_paq.push(['setDocumentTitle', "electowikiwiki" + " - " + "Ranked Pairs"]);
+					_paq.push(['setSiteId', 1026]);
+					_paq.push(['setCustomVariable', 1, 'userType', "Anonymous", "visit"]);
+					if ( 8590 ) {
+					    _paq.push(['addTracker', u + 'matomo.php', 8590]);
+					}
+					var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+					g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+				})();
+				</script>
+				<noscript><p><img src="https://matomo.miraheze.org/matomo.php?idsite=1026&amp;rec=1&amp;action_name=Ranked_Pairs" style="border:0;" alt="" /></p></noscript>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":742,"wgHostname":"mw111"});});</script>
+</body>
+</html>

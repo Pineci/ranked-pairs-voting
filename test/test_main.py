@@ -3,18 +3,16 @@ import pandas as pd
 print(__name__)
 print(__package__)
 
-from src.main import MakeRankings
+from src.main import FindRankings
 from itertools import permutations
 
 import pytest
 
-#TODO: Fix all comments
+#TODO: Fill in README
 
 #TODO: Archive all web pages to the github repo
 
 #TODO: just accept files as arguments to a command line script
-
-#TODO: Add type hints
 
 # Makes example ballots accoring to the Tennessee example in the Ranked
 # Pairs wikipedia page, assuming 100 votes
@@ -43,7 +41,7 @@ def test_tennessee_ballots():
         data.append(knoxville)
     df = pd.DataFrame(data, columns=['memphis','nashville','chattanooga','knoxville'])
 
-    rankings = MakeRankings(df)
+    rankings = FindRankings(df)
     assert rankings == ['nashville', 'chattanooga', 'knoxville', 'memphis']
 
 def test_narrow_winner():
@@ -63,7 +61,7 @@ def test_narrow_winner():
         data.append(voter_three)
     df = pd.DataFrame(data, columns=["A", "B", "C"])
     
-    rankings = MakeRankings(df)
+    rankings = FindRankings(df)
     assert rankings == ["A", "B", "C"]
 
 def test_tie():
@@ -83,7 +81,7 @@ def test_tie():
         data.append(voter_three)
     df = pd.DataFrame(data, columns=["A", "B", "C"])
 
-    rankings = MakeRankings(df)
+    rankings = FindRankings(df)
     assert rankings in list(map(lambda x: [x], permutations(["A", "B", "C"])))
 
 def test_middle_two_tie():
@@ -103,7 +101,7 @@ def test_middle_two_tie():
         data.append(voter_two)
     df = pd.DataFrame(data, columns=["A", "B", "C", "D"])
 
-    rankings = MakeRankings(df)
+    rankings = FindRankings(df)
     assert rankings in [["A", ("B", "C"), "D"], ["A", ("C", "B"), "D"]]
 
 def test_middle_three_tie():
@@ -127,7 +125,7 @@ def test_middle_three_tie():
         data.append(voter_three)
     df = pd.DataFrame(data, columns=["A", "B", "C", "D", "E"])
 
-    rankings = MakeRankings(df)
+    rankings = FindRankings(df)
     assert rankings in list(map(lambda x: ["A"] + [x] + ["E"], permutations(["B", "C", "D"])))
 
 def test_multiple_ties():
@@ -153,7 +151,7 @@ def test_multiple_ties():
         data.append(voter_four)
     df = pd.DataFrame(data, columns=["A", "B", "C", "D"])
     
-    rankings = MakeRankings(df)
+    rankings = FindRankings(df)
     assert rankings in [[("A", "B"), ("C", "D")],
                         [("B", "A"), ("C", "D")],
                         [("A", "B"), ("D", "C")],

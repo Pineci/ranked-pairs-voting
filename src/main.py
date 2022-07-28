@@ -2,26 +2,27 @@ import pandas as pd
 import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
-from typing import List, Dict
+from typing import List, Dict, Union
 from functools import cmp_to_key
 from itertools import permutations
 
-#TODO: Fix all comments
-
 # Loads ballots from a csv file. Assumes file is formated using output from a google sheets form.
-def LoadBallots(filename : str) -> pd.DataFrame:
+def LoadBallots(filename: str) -> pd.DataFrame:
     ballots = pd.read_csv(filename)
     return ballots.drop(columns=["Timestamp"])
 
 # Returns a new ballots dataframe and removes a specific candidate from consideration.
-def RemoveCandidate(ballots : pd.DataFrame, candidate : str) -> pd.DataFrame:
-    return ballots.drop(columns=[candidate])
+def RemoveCandidate(ballots: pd.DataFrame, candidate: Union[str, List[str]]) -> pd.DataFrame:
+    if isinstance(candidate, list):
+        return ballots.drop(columns=candidate)
+    else:
+        return ballots.drop(columns=[candidate])
 
 # Take in a dataframe and return a square maatrix with results from the ballots.
 # The entry in row i, column j indicates how many people preferred candidate i to
 # candidate j. In the event that two candidates are ranked the same, the voter is
 # split equally between them. The diagonal of the matrix holds no meaning. 
-def TallyBallots(ballots : pd.DataFrame) -> pd.DataFrame:
+def TallyBallots(ballots: pd.DataFrame) -> pd.DataFrame:
     # Set up tally matrix
     candidates = ballots.columns
     tally = pd.DataFrame(np.zeros((len(candidates), len(candidates))), columns=candidates, index=candidates)
@@ -55,7 +56,7 @@ def FindMajorities(tally: pd.DataFrame) -> List[tuple[str, str]]:
 
 # Returns positive values iff majority1 > majority2, negative values iff majority1 < majority2, and 0 for equality
 # Ordering is determined first by largest size of winning majority, then by smallest size of opposing minority.
-def CompareMajorities(majority1 : tuple[str, str], majority2: tuple[str, str], tally: pd.DataFrame) -> int:
+def CompareMajorities(majority1: tuple[str, str], majority2: tuple[str, str], tally: pd.DataFrame) -> int:
     c1, c2 = majority1
     d1, d2 = majority2
     s1, s2 = tally.loc[c1][c2], tally.loc[d1][d2]
@@ -158,7 +159,7 @@ def InCycle(graph: Dict[str, List[str]], vertex: str) -> bool:
     return CreatesCycle(graph, vertex, 0)
 
 # Draws the graph.
-def DrawGraph(graph):
+def DrawGraph(graph: Dict[str, List[str]]) -> None:
     g = nx.DiGraph(graph)
     nx.draw_circular(g)
     pos = nx.circular_layout(g)
@@ -166,7 +167,8 @@ def DrawGraph(graph):
     nx.draw_networkx_labels(g,pos,labels)
     plt.show()
 
-def GraphRoots(graph) -> List[str]:
+# Finds all roots of the graph, i.e. vertices with in-degree 0
+def GraphRoots(graph: Dict[str, List[str]]) -> List[str]:
     in_degrees = {k: 0 for k in graph.keys()}
     for key in graph.keys():
         for target in graph[key]:
@@ -177,7 +179,14 @@ def GraphRoots(graph) -> List[str]:
             roots.append(key)
     return roots
 
-def RunBallots(ballots, draw_graph: bool=False, debug: bool=False, alert_ties: bool=False):
+# Runs the full ranked pairs algorithm to find a winner given a ballot. The process first tallies the ballots, then find the winning majorities, and
+# sort these majorities by the ranked pairs ordering criterion. Then this sorted list is used to create a directed acyclic graph (DAG) and the winner
+# is the unique vertex with in degree 0. If there is more than one vertex with degree 0, then the winner is ambiguous and the result is a tie.
+# 
+# Another way a tie can occur is due to ambiguous orderings of the sorted majorities. We check all possible sorted majorities where equivalent elements
+# are permuted. If every majority has exactly one winner and this winner is the same across all possible sorts, then they are unambiguously the winner. 
+# Otherwise, it is ruled as a tie and multiple winners are returned in a tuple. 
+def FindWinner(ballots: pd.DataFrame, draw_graph: bool=False, debug: bool=False, alert_ties: bool=False) -> Union[str, tuple[str]]:
     tally = TallyBallots(ballots)
     majorities = FindMajorities(tally)
     first_sorted_majorities = SortMajorities(majorities, tally)
@@ -210,12 +219,15 @@ def RunBallots(ballots, draw_graph: bool=False, debug: bool=False, alert_ties: b
     else:
         return list(winners.keys())[0]
 
-def MakeRankings(ballots, debug: bool = False):
+# Find rankings for all the candidates given the ballots. To do so, the winner/winners are found given the ballots. The winner/winners
+# are then removed from the ballots and a winner among the remaining candidates if found until no candidates remain. Results are returned
+# in an ordered list of the winners, where tuples of candidates indicate ties.
+def FindRankings(ballots: pd.DataFrame) -> List[Union[str, tuple[str]]]:
     candidates = ballots.columns
     ranking = []
     counted = 0
     while counted < len(candidates):
-        winner = RunBallots(ballots, debug=debug)
+        winner = FindWinner(ballots)
         ranking.append(winner)
         if not isinstance(winner, tuple):
             winner = [winner]
@@ -224,12 +236,13 @@ def MakeRankings(ballots, debug: bool = False):
             counted += 1
     return ranking
 
-def RunFile(filename, i=None):
+# Loads ballots from a file and either finds the winner or rankings from the ballot. A specific candidate or list of candidates
+# can optionally be removed from consideration. 
+def RunFile(filename: str, mode: str='winner', removed_candidates: Union[str, List[str]]=None) -> Union[str, tuple[str], List[Union[str, tuple[str]]]]:
     ballots = LoadBallots(filename)
-    if i:
-        ballots = RemoveCandidate(ballots,i)
-    RunBallots(ballots)
-
-#filename = "Historian - Sheet1.csv"
-
-#RunFile(filename)
+    if removed_candidates:
+        ballots = RemoveCandidate(ballots, removed_candidates)
+    if mode == 'winner':
+        return FindWinner(ballots)
+    if mode == 'rankings':
+        return FindRankings(ballots)

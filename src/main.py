@@ -131,27 +131,31 @@ def PermuteSortedMajorities(sorted_majorities: List[tuple[str, str]], tally: pd.
 
     return permuted_sorted_majorities
 
-
-def LockGraph(sorted_majorities: List[tuple[str, str]], tally: pd.DataFrame) -> Dict[str, str]:
+# Creates a graph given a list of sorted majorities. Sorted majorities in the form [(a, b), (c, d), ...]
+# create edges from a to b, from c to d, et cetera. The graph is stored in a dictionary, where the key is
+# a vertex and the value is a list of vertices which have edges pointing to them from the key vertex.
+def LockGraph(sorted_majorities: List[tuple[str, str]], tally: pd.DataFrame) -> Dict[str, List[str]]:
     graph = {k: [] for k in tally.columns}
     for majority in sorted_majorities:
         c1, c2 = majority
         graph[c1].append(c2)
-        if CreatesCycle(graph, c1, c1, 0):
+        if InCycle(graph, c1):
             graph[c1].pop(-1)
     return graph
 
 # Checks if the provided graph contains a cycle which contains the relevant new edge
-def CreatesCycle(graph, currentkey, origin,depth):
-    if depth > len(graph.keys())+1:
+def InCycle(graph: Dict[str, List[str]], vertex: str) -> bool:
+    def CreatesCycle(graph, currentkey, depth):
+        if depth > len(graph.keys())+1:
+            return False
+        if currentkey in graph.keys():
+            for key in graph[currentkey]:
+                if key == vertex:
+                    return True
+                if CreatesCycle(graph, key, depth+1):
+                    return True
         return False
-    if currentkey in graph.keys():
-        for key in graph[currentkey]:
-            if key == origin:
-                return True
-            if CreatesCycle(graph,key,origin,depth+1):
-                return True
-    return False
+    return CreatesCycle(graph, vertex, 0)
 
 # Draws the graph.
 def DrawGraph(graph):

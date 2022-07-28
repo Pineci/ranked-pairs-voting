@@ -12,11 +12,9 @@ import pytest
 
 #TODO: Archive all web pages to the github repo
 
-#TODO: add a testing unit with pytests
-
 #TODO: just accept files as arguments to a command line script
 
-#TODO: Check create cycle code
+#TODO: Add type hints
 
 # Makes example ballots accoring to the Tennessee example in the Ranked
 # Pairs wikipedia page, assuming 100 votes

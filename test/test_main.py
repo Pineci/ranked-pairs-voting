@@ -1,14 +1,12 @@
 import pandas as pd
-
-print(__name__)
-print(__package__)
-
 from src.main import FindRankings
 from itertools import permutations
 
 import pytest
 
 #TODO: Fill in README
+
+#TODO: Add instructions for creating python environment
 
 #TODO: just accept files as arguments to a command line script
 

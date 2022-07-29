@@ -1,0 +1,13 @@
+name: voting
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - matplotlib
+  - networkx
+  - notebook
+  - numpy
+  - pandas
+  - pip
+  - pytest
+  - python=3.9

@@ -1,14 +1,8 @@
 import pandas as pd
-from src.main import FindRankings
+from src.voting import FindRankings, RunFile
 from itertools import permutations
 
 import pytest
-
-#TODO: Fill in README
-
-#TODO: Add instructions for creating python environment
-
-#TODO: just accept files as arguments to a command line script
 
 # Makes example ballots accoring to the Tennessee example in the Ranked
 # Pairs wikipedia page, assuming 100 votes
@@ -38,6 +32,10 @@ def test_tennessee_ballots():
     df = pd.DataFrame(data, columns=['memphis','nashville','chattanooga','knoxville'])
 
     rankings = FindRankings(df)
+    assert rankings == ['nashville', 'chattanooga', 'knoxville', 'memphis']
+
+def test_tennesee_ballots_from_file():
+    rankings = RunFile('ballots/tennessee_ballots.csv', mode='rankings')
     assert rankings == ['nashville', 'chattanooga', 'knoxville', 'memphis']
 
 def test_narrow_winner():

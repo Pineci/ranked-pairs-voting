@@ -8,6 +8,8 @@ As a brief outline, ranked pairs involves three crucial steps: **tally**, **sort
 
 This sorting scheme creates an amibguity when two majorities have equal winning majorities and equal opposing minorities. I have created several examples in the test file which create this ambiguity. To avoid choosing one candidate over the other, I have made a modification to the voting system where we create all possible valid sorted majorities by permuting adjacent majorities which are equal under the comparison metric. The lock step is then run for every one of these valid sorted majorities. If every one of these lock steps results in the same winner, then this candidate is reported as the winner. If any of these orderings produces different winning candidates, a tie is declared. Another way for a tie to occur is when two vertices have in-degree 0 in the lock step. This is also declared as a tie.
 
+**Warning:** This method of tie breaking is at least O(n!), meaning that tie breaking large pools of candidates could be infeasible. The chances of this occuring are very slim due to the method of comparing majorities, and is less likely to occur the more votes there are in an election. I'm sure a clever approach exists which has better time complexity than brute force, but I didn't think it was necessary for the purposes of this repository. If this does in fact become an issue in the future, contact me about the issue.
+
 ## Environment Setup
 
 Included in this repository is a `environment.yml` file which can be used to construct a python environment using [Anaconda](https://www.anaconda.com/products/distribution). Briefly, the command line tool `conda` manages multiple python environments and allows the user to easily switch between different installations of python and whatever modules are installed in those environments. If this software is new to you, it may be helpful to look at the [conda cheat sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf).
@@ -23,6 +25,12 @@ Alternatively, the code can be run from a jupyter notebook. The provided noteboo
 ### Input Format
 
 Please inspect the sample ballot file located at `ballots/tennessee_ballots.csv` to see the desired input format. Ballot files are assumed to have been created from a google form sheet. If a different input format is desired, please modify the `LoadBallots` function as necessary and create a pull request/contact me directly to incorporate any changes into this repository.
+
+### Output Format
+
+Results from the voting scheme can be given as just a single winner from the election, or by reporting the final rankings of all the candidates. The winner is found using the usual ranked pairs method. To find rankings, only the candidates that have not yet been ranked are considered, then ranked pairs is run again on this pool of candidates. The winner from this pool takes the next spot in the rankings, then this process repeats until every candidate is somewhere in the rankings.
+
+When a tie occurs, instead of outputing a single candidate, the program gives back a tuple of candidates that tied in a specific spot. For instance, if the winner of a ballot is `('A', 'B')`, that means that candidates A and B won, but tied.
 
 ## Testing
 
